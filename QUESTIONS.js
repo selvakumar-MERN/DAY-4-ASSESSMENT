@@ -1,77 +1,197 @@
-//1.HOW TO COMPARE TWO JSON HAVE THE SAME PROPERTIES WITHOUT ORDER.
+//1.Do the below programs in anonymous function & IIFE
+// a.Print odd numbers in an array(using IIFE function)
+var oddnumber= (function(a){
+  console.log("a.Print odd numbers in an array(using IIFE function)")
+  console.log("USING IIFE FUNCTION");
+  for(i=0;i<a.length;i++){
+    if(a[i]%2!=0){
+      console.log(a[i]);
+    }
+    else{
+      continue;
+    }}
+    })(["1","2","3","4","5","6","7","8","9"])
 
-let obj1={name:"person1",age:5};
-let obj2={age:5,name:"person1"};
- let objkeys1= Object.keys(obj1);
- let objkeys2= Object.keys(obj2);
- function equal(obj1,obj2){
-     if(objkeys1.length!==objkeys2.length)
- {
-   return "The two JSON don't have same properties";
- }
-for(let userkey of objkeys1){
-  if(obj1[userkey]!=obj2[userkey]){
-    return "The two JSON don't same properties";
+// B)Convert all the strings to title caps in a string array (using IIFE function)
+console.log("B)Convert all the strings to title caps in a string array (using IIFE function)");
+  console.log("USING IIFE FUNCTION");
+var stringtitlecaps= (function(a){
+  let b="";
+for(let i=0;i<a.length;i++){
+  let c=a[i].split("");
+  c[0]=c[0].toUpperCase();
+  b=b+c.join("")+" ";
+  }
+let d=b.split(" ");
+  d.pop();
+  let e= d.join(" ");
+console.log(e);
+  })(["guvi","geeks","code"])
+
+//C)Sum of all numbers in an array (using anonymous function)
+console.log("C) Sum of all numbers in an array")
+  console.log("USING ANONYMOUS FUNCTION");
+var sumofarray= function(a){
+  let b=0;
+  for(i=0;i<a.length;i++){
+    b=b+a[i];
+  }
+  return b;
+}
+console.log(sumofarray([1,2,3,4,5,6,7,8,9]));
+
+
+//D.Return all the prime numbers in an array
+console.log("D.Return all the prime numbers in an array")
+  console.log("USING ANONYMOUS FUNCTION");
+let num = [1,2,3,4,5,6,7,8,9,10];
+let result = [];
+var isPrime =function (num) {
+  if(num < 2) return false;
+
+  for (let k = 2; k < num; k++){
+    if(num % k == 0){
+      return false;
+    }
+  }
+  return true;
+}
+num.forEach(function (element) {
+  const item = isPrime(element);
+  if (item) {
+    result.push(element);
+  }
+});
+console.log(result);
+
+//E)Return all the palindromes in an array(using  function)
+console.log("E)Return all the palindromes in an array")
+  console.log("USING ANONYMOUS FUNCTION");
+var palindrome= function(a){
+  let c="";
+  for(i=0;i<a.length;i++){
+  let b=a[i].split("").reverse().join("");
+  if(b==a[i]){
+    c=c+a[i]+" ";
+  }
+}
+let d=c.trimEnd();
+return d;
+}
+console.log(palindrome(["selva","madam","kumar","nitin"]));
+
+
+//F.Return median of two sorted arrays of the same size.
+console.log("F.Return median of two sorted arrays of the same size")
+  console.log("USING ANONYMOUS FUNCTION");
+var median= function(a,b){
+  let joinarray=a.concat(b);
+  joinarray.sort((a, b) => a - b);
+  let c=joinarray.length/2;
+  let result=(joinarray[c-1]+joinarray[c])/2;
+  return "median= "+ result;
+    }
+ console.log(median([12,14,25,35],[2,3,8,18]))
+
+//G.Remove duplicates from an array
+console.log("G.Remove duplicates from an array")
+  console.log("USING IIFE FUNCTION");
+ var removeduplicate= (function(a){
+  console.log ( [...new Set(a)])
+
+})(["banana","apple","banana","grape"])
+
+//H.Rotate an array by k times
+console.log("H.Rotate an array by k times")
+  console.log("USING ANONYMOUS FUNCTION");
+var rotate=function(a,b){
+  for(i=0;i<b;i++){
+  a.unshift(a.pop())}
+
+return a;
+}
+console.log(rotate([1,2,3,4,5,6,7,8,9],11))
+
+
+// 3.Do the below programs in arrow function.
+// a.Print odd numbers in an array(using arrow function)
+var oddnumber= (a)=>{
+  console.log("A) PRINT ODD NUMBERS IN A ARRAY")
+  console.log("USING ARROW FUNCTION");
+for(i=0;i<a.length;i++){
+  if(a[i]%2!=0){
+    console.log(a[i]);
   }
   else{
-    return "The two JSON have same properties";
+    continue;
+  }}
+  }
+oddnumber(["1","2","3","4","5","6","7","8","9"])
+
+// b).Convert all the strings to title caps in a string array (using arrow function)
+console.log("B) Convert all the strings to title caps in a string array")
+  console.log("USING ARROW FUNCTION");
+var stringtitlecaps= (a)=>{
+  let b="";
+for(let i=0;i<a.length;i++){
+  let c=a[i].split("");
+  c[0]=c[0].toUpperCase();
+  b=b+c.join("")+" ";
+  }
+let d=b.split(" ");
+  d.pop();
+  let e= d.join(" ");
+return e;
+  }
+console.log(stringtitlecaps(["guvi","geeks","code"]));
+
+//C)Sum of all numbers in an array (using arrow function)
+console.log("C) Sum of all numbers in an array")
+  console.log("USING ARROW FUNCTION");
+var sumofarray= (a)=>{
+  let b=0;
+  for(i=0;i<a.length;i++){
+    b=b+a[i];
+  }
+  return b;
+}
+console.log(sumofarray([1,2,3,4,5,6,7,8,9]));
+
+//D.Return all the prime numbers in an array
+console.log("D.Return all the prime numbers in an array")
+  console.log("USING ARROW FUNCTION");
+let numb = [1,2,3,4,5,6,7,8,9,10];
+let result1 = [];
+var isPrime = (numb)=> {
+  if(numb < 2) return false;
+
+  for (let k = 2; k < numb; k++){
+    if(numb % k == 0){
+      return false;
+    }
+  }
+  return true;
+}
+numb.forEach(function (element) {
+  const item = isPrime(element);
+  if (item) {
+    result1.push(element);
+  }
+});
+console.log(result1);
+
+// E)Return all the palindromes in an array(using arrow function)
+console.log("E)Return all the palindromes in an array")
+  console.log("USING ARROW FUNCTION");
+var palindrome= (a)=>{
+  let c="";
+  for(i=0;i<a.length;i++){
+  let b=a[i].split("").reverse().join("");
+  if(b==a[i]){
+    c=c+a[i]+" ";
   }
 }
+let d=c.trimEnd();
+return d;
 }
-console.log(equal(obj1,obj2));
-//OUTPUT:The two JSON have same properties
-
-
-
-//2.USE THE RAEST COUNTRIES API URL https://restcountries.com/v3.1/all  AND DISPLAY ALL COUNTRY FLAGS IN CONSOLE.
- 
-var xhr= new XMLHttpRequest();
-xhr.open ('GET','https://restcountries.com/v3.1/all')
-xhr.responseType='json';
-xhr.send();
-xhr.onload=function(){
-  var responseObj=xhr.response;
-  for(i=0;i<responseObj.length;i++){
- console.log("COUNTRY NAME: "+responseObj[i].name.common+"                           "+"FLAG: "+responseObj[i].flags.png);
-
-  }
-}
-
-//OUTPUT
-
-// myscript.js:9 COUNTRY NAME: Guatemala                    FLAG: https://flagcdn.com/w320/gt.png
-// myscript.js:9 COUNTRY NAME: Singapore                    FLAG: https://flagcdn.com/w320/sg.png
-// myscript.js:9 COUNTRY NAME: Bosnia and Herzegovina       FLAG: https://flagcdn.com/w320/ba.png
-// myscript.js:9 COUNTRY NAME: Maldives                     FLAG: https://flagcdn.com/w320/mv.png
-// myscript.js:9 COUNTRY NAME: Latvia                       FLAG: https://flagcdn.com/w320/lv.png
-// myscript.js:9 COUNTRY NAME: Greece                       FLAG: https://flagcdn.com/w320/gr.png
-// myscript.js:9 COUNTRY NAME: Cocos (Keeling) Islands      FLAG: https://flagcdn.com/w320/cc.png
-// myscript.js:9 COUNTRY NAME: Mayotte                      FLAG: https://flagcdn.com/w320/yt.png
-
-
-//3.USE THE REST COUNTRIES AND DISPLAY ALL COUNTRIES NAME, REGION, SUB REGION AND POPULATION IN CONSOLE.
-
-var xhr= new XMLHttpRequest();
-xhr.open ('GET','https://restcountries.com/v3.1/all')
-xhr.responseType='json';
-xhr.send();
-xhr.onload=function(){
-  var responseObj=xhr.response;
-for(i=0;i<responseObj.length;i++){
- console.log( `COUNTRY NAME: ${responseObj[i].name.common}             REGION: ${responseObj[i].region}        SUBREGION: ${responseObj[i].subregion}          POPULATION: ${responseObj[i].population}`);
-
-  }
-}
-
-
-//OUTPUT:
-// COUNTRY NAME: Guatemala                               REGION: Americas    SUBREGION: Central America            POPULATION: 16858333
-// myscript.js:8 COUNTRY NAME: Singapore                 REGION: Asia        SUBREGION: South-Eastern Asia         POPULATION: 5685807
-// myscript.js:8 COUNTRY NAME: Bosnia and Herzegovina    REGION: Europe      SUBREGION: Southeast Europe           POPULATION: 3280815
-// myscript.js:8 COUNTRY NAME: Maldives                  REGION: Asia        SUBREGION: Southern Asia              POPULATION: 540542
-// myscript.js:8 COUNTRY NAME: Latvia                    REGION: Europe      SUBREGION: Northern Europe            POPULATION: 1901548
-// myscript.js:8 COUNTRY NAME: Greece                    REGION: Europe      SUBREGION: Southern Europe            POPULATION: 10715549
-// myscript.js:8 COUNTRY NAME: Cocos (Keeling) Islands   REGION: Oceania     SUBREGION: Australia and New Zealand  POPULATION: 544
-// myscript.js:8 COUNTRY NAME: Mayotte                   REGION: Africa      SUBREGION: Eastern Africa             POPULATION: 226915
-// myscript.js:8 COUNTRY NAME: Jordan                    REGION: Asia        SUBREGION: Western Asia               POPULATION: 10203140
-// myscript.js:8 COUNTRY NAME: Bangladesh                REGION: Asia        SUBREGION: Southern Asia              POPULATION: 164689383
+console.log(palindrome(["selva","madam","kumar","nitin"]));
